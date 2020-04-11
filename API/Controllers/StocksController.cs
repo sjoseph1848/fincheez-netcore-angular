@@ -17,12 +17,17 @@ namespace API.Controllers {
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Stock>>> GetStocks() 
+        public string GetStock()
         {
-            var stocks = await _context.Stocks.ToListAsync();
+            return "this is a test man";
+        } 
 
-            return Ok(stocks);
-        }
+        // public async Task<ActionResult<List<Stock>>> GetStocks() 
+        // {
+        //     var stocks = await _context.Stocks.ToListAsync();
+
+        //     return Ok(stocks);
+        // }
 
         [HttpGet ("{id}")]
         public async Task<ActionResult<Stock>> GetStock (int id) 
